@@ -24,7 +24,7 @@ jobs:
       - name: Slack notification
         uses: slackapi/slack-github-action@v1.22
         with:
-          channel-id: '#donauts-launchpad-open'
+          channel-id: ${{ secrets.SLACK_CHANNEL_ID }}
           slack-message: |
             :package: Release published: <${{ github.event.release.html_url }}|*${{ github.repository }} ${{ github.ref_name }}*>
         env:
