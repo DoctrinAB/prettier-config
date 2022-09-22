@@ -3,7 +3,7 @@ name: Release reminder
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 10 * * 2,4' # At 10:00 UTC every Tuesday and Thursday (https://crontab.guru/#0_10_*_*_2,4)
+    - cron: '0 8 * * 1' # At 08:00 UTC every Monday
 
 jobs:
   check_changes_since_last_release:
@@ -32,6 +32,6 @@ jobs:
         with:
           channel-id: ${{ secrets.SLACK_CHANNEL_ID }}
           slack-message: |
-            :wave: `${{ github.event.repository.name }}` has <${{ github.server_url }}/${{ github.repository }}/compare/${{ env.LATEST_RELEASE_TAG }}...HEAD|unreleased changes>. Please consider <${{ github.server_url }}/${{ github.repository }}/releases/new|deploying a new version>.
+            :wave: `${{ github.repository }}` has <${{ github.server_url }}/${{ github.repository }}/compare/${{ env.LATEST_RELEASE_TAG }}...HEAD|unreleased changes>. Please consider <${{ github.server_url }}/${{ github.repository }}/releases/new|deploying a new version>.
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
