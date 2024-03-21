@@ -18,5 +18,8 @@
 	"homepage": "https://github.com/DoctrinAB/prettier-config#readme",
 	"publishConfig": {
 		"registry": "https://npm.pkg.github.com/"
+	},
+	"peerDependencies": {
+		"prettier-plugin-jsdoc": "^1.0.0"
 	}
 }
