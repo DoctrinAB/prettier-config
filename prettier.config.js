@@ -5,4 +5,5 @@ module.exports = {
 	trailingComma: 'all',
 	semi: true,
 	useTabs: true,
+	plugins: ['prettier-plugin-jsdoc'],
 };
